@@ -4,47 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NIKITATIUTIUNNYK.FUN - Strona główna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
     body {
-      margin: 0;
-      background-color: black;
-      color: white;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0; background: black; color: white; font-family: 'Noto Sans', sans-serif; display: flex; flex-direction: column; min-height: 100vh;
     }
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      border-bottom: 1px solid #444;
+      display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; border-bottom: 1px solid #444; flex-shrink: 0;
     }
     header .logo {
-      font-weight: bold;
-      font-size: 24px;
+      font-weight: 700; font-size: 24px;
     }
     nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-weight: bold;
-      font-size: 16px;
-      transition: color 0.3s;
+      color: white; text-decoration: none; margin-left: 25px; font-weight: 700; font-size: 16px; transition: color 0.3s;
     }
     nav a:hover {
       color: #00ccff;
     }
     main {
-      padding: 40px 30px;
-      font-size: 20px;
-      display: flex;
-      justify-content: center;
+      flex: 1; display: flex; justify-content: center; align-items: center; padding: 40px 20px;
     }
-    main img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #00ccff;
+    img {
+      max-width: 90vw; max-height: 80vh; border-radius: 12px; box-shadow: 0 0 15px rgba(0,255,255,0.4);
     }
   </style>
 </head>
@@ -57,9 +38,8 @@
       <a href="/kontakt">KONTAKT</a>
     </nav>
   </header>
-
   <main>
-    <img src="haraszo158.jpeg" alt="Haraszo" />
+    <img src="haraszo158.jpg" alt="Haraszo" />
   </main>
 </body>
 </html>
