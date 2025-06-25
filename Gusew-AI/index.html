@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NIKITATIUTIUNNYK.FUN - GUSEW AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Noto Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #444;
+      flex-shrink: 0;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 24px;
+      font-family: 'Comic Sans MS', 'Comic Sans', sans-serif;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ccff;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    p.subtitle {
+      margin: 5px 0 20px;
+      font-size: 20px;
+      color: #ccc;
+    }
+    .btn {
+      background: white;
+      color: black;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.3);
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #eee;
+    }
+    .section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 900px;
+      width: 100%;
+    }
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .info-box {
+      background: white;
+      color: black;
+      padding: 25px 30px;
+      border-radius: 12px;
+      flex: 1;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    .info-box h2 {
+      margin-top: 0;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    .info-box p {
+      margin: 10px 0 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .section img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    @media (max-width: 600px) {
+      .section {
+        flex-direction: column !important;
+      }
+      .section img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">NIKITATIUTIUNNYK.FUN</div>
+    <nav>
+      <a href="/">STRONA GŁÓWNA</a>
+      <a href="/gusew-1.0">GUSEW-1.0</a>
+      <a href="/kontakt">KONTAKT</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>GUSEW AI</h1>
+    <p class="subtitle">Nowoczesny chatbot AI</p>
+    <a href="/gusew-1.0" class="btn">Porozmawiaj z Gusewem</a>
+
+    <div class="section">
+      <div class="info-box">
+        <h2>Gusew 0.8 – Początki</h2>
+        <p>Model Gusew 0.8 został stworzony na bazie GPT-2 przez anonimowego programistę o imieniu Trofim Gusew. To innowacyjny chatbot, który wyróżniał się unikalnym stylem komunikacji oraz zdolnością do generowania tekstu w języku polskim i rosyjskim. Jego lekki rozmiar i optymalizacja pozwalały na uruchomienie na standardowym sprzęcie, co czyniło go dostępnym dla szerszej grupy użytkowników.</p>
+      </div>
+      <img src="gusew-0.8.jpg" alt="Gusew 0.8">
+    </div>
+
+    <div class="section">
+      <div class="info-box">
+        <h2>Rozwój i przejęcie w 2025</h2>
+        <p>W roku 2025 model Gusew 0.8 został kupiony przez firmę Chujniownia — znanego innowatora w branży AI. Firma postawiła sobie za cel rozwinięcie oryginalnego modelu, zwiększając jego możliwości oraz skalowalność. Dzięki zastosowaniu nowoczesnych technik uczenia maszynowego i większej mocy obliczeniowej, powstał Gusew 1.0 — bardziej zaawansowany chatbot z rozbudowanym kontekstem i lepszym rozumieniem języka naturalnego.</p>
+      </div>
+      <img src="chujniownia-logo.jpg" alt="Chujniownia">
+    </div>
+
+    <div class="section">
+      <div class="info-box">
+        <h2>Gusew 1.0 – Obecnie</h2>
+        <p>Aktualnie Gusew 1.0 jest dostępny na stronie <a href="/gusew-1.0" style="color:#00ccff; text-decoration:none;">nikitatiutiunnyk.fun/gusew-1.0</a> i umożliwia interaktywną rozmowę z nowoczesnym chatbotem AI. Model jest stale rozwijany i dostosowywany do potrzeb użytkowników, oferując naturalne dialogi, kreatywne odpowiedzi i wsparcie w różnych tematach. To przykład, jak sztuczna inteligencja może łączyć zaawansowaną technologię z codzienną komunikacją.</p>
+      </div>
+      <img src="chat-screenshot.jpg" alt="Rozmowa z Gusewem">
+    </div>
+
+  </main>
+
+</body>
+</html>
