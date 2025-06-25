@@ -3,25 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nikita Tiutiunnyk</title>
-  <link rel="icon" href="ukraine-flag.jpg" type="image/jpg" />
+  <title>NIKITATIUTIUNNYK.FUN - Strona główna</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
     body {
       margin: 0;
       background-color: black;
+      color: white;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #444;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ccff;
+    }
+    main {
+      padding: 40px 30px;
+      font-size: 20px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
-    img {
+    main img {
       max-width: 100%;
-      max-height: 100vh;
-      object-fit: contain;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ccff;
     }
   </style>
 </head>
 <body>
-  <img src="haraszo158.jpeg" alt="Haraszo" />
+  <header>
+    <div class="logo">NIKITATIUTIUNNYK.FUN</div>
+    <nav>
+      <a href="/">STRONA GŁÓWNA</a>
+      <a href="/gusew-1.0">GUSEW-1.0</a>
+      <a href="/kontakt">KONTAKT</a>
+    </nav>
+  </header>
+
+  <main>
+    <img src="haraszo158.jpeg" alt="Haraszo" />
+  </main>
 </body>
 </html>
