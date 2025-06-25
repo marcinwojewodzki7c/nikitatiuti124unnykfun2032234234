@@ -5,15 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NIKITATIUTIUNNYK.FUN - GUSEW-1.0</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
     body {
       margin: 0;
       background-color: black;
       color: white;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      height: 100vh;
     }
     header {
       display: flex;
@@ -21,6 +20,7 @@
       align-items: center;
       padding: 15px 30px;
       border-bottom: 1px solid #444;
+      flex-shrink: 0;
     }
     header .logo {
       font-weight: bold;
@@ -37,38 +37,64 @@
     nav a:hover {
       color: #00ccff;
     }
-    main {
+    #chat {
       flex: 1;
-      padding: 40px 30px;
-      font-size: 18px;
+      padding: 20px;
+      overflow-y: auto;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      gap: 10px;
     }
-    input, button {
-      padding: 10px;
-      font-size: 16px;
-      margin: 5px;
-      border-radius: 6px;
-      border: none;
+    .message {
+      max-width: 70%;
+      padding: 10px 15px;
+      border-radius: 15px;
+      line-height: 1.4;
+      font-size: 18px;
+      word-wrap: break-word;
+      white-space: pre-wrap;
     }
-    input {
-      width: 300px;
-    }
-    button {
+    .user {
+      align-self: flex-end;
       background-color: #007acc;
       color: white;
+      border-bottom-right-radius: 0;
+    }
+    .gusew {
+      align-self: flex-start;
+      background-color: #00ccff;
+      color: black;
+      border-bottom-left-radius: 0;
+    }
+    #inputArea {
+      display: flex;
+      padding: 15px 30px;
+      border-top: 1px solid #444;
+      flex-shrink: 0;
+      background-color: #111;
+    }
+    #userInput {
+      flex: 1;
+      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+      font-size: 18px;
+      padding: 10px 15px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      margin-right: 15px;
+    }
+    #sendBtn {
+      background-color: #007acc;
+      border: none;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 20px;
       cursor: pointer;
       transition: background-color 0.3s;
     }
-    button:hover {
+    #sendBtn:hover {
       background-color: #005f99;
-    }
-    #response {
-      margin-top: 20px;
-      color: #00ffcc;
-      min-height: 40px;
-      font-weight: bold;
     }
   </style>
 </head>
@@ -82,19 +108,19 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Żartobliwy AI Chatbot</h2>
-    <input type="text" id="userInput" placeholder="Napisz coś..." />
-    <button onclick="reply()">Wyślij</button>
-    <div id="response"></div>
-  </main>
+  <div id="chat"></div>
+
+  <div id="inputArea">
+    <input type="text" id="userInput" placeholder="Napisz coś..." autocomplete="off" />
+    <button id="sendBtn">Wyślij</button>
+  </div>
 
   <script>
     const words = [
       "Nikita", "хорошо", "chreboścz", "krae??", "!", "?",
       "si©ciĄ", "Nubia", "Cochuje", "morze", "Powszy", "dżemcie",
       "??????????", "тра", "Todomieść", "Ania", "ерво", "gwiazda",
-      "муш", "riało", "O ", "T x ((", ":" "kraę?",
+      "муш", "riało", "O ", "T x ((", ":", "kraę?",
       "Polskie", "Żydci", "Józwiego", "Gerwazy", "jążeci?", "О х я с у т р бил",
       "Niedczym", "powem", "..", ".", "w", "łĄk",
       "na", "ăT", "Czączem", "!! !", "Krezna", "Kremlin",
@@ -113,16 +139,32 @@
       return result.join(" ");
     }
 
-    function reply() {
-      const input = document.getElementById("userInput").value.trim();
-      if (!input) {
-        document.getElementById("response").textContent = "Napisz coś, proszę!";
-        return;
-      }
-      const response = getRandomWords();
-      document.getElementById("response").textContent = response;
-      document.getElementById("userInput").value = "";
+    const chat = document.getElementById("chat");
+    const userInput = document.getElementById("userInput");
+    const sendBtn = document.getElementById("sendBtn");
+
+    function addMessage(text, sender) {
+      const msg = document.createElement("div");
+      msg.classList.add("message", sender);
+      msg.textContent = text;
+      chat.appendChild(msg);
+      chat.scrollTop = chat.scrollHeight;
     }
+
+    function reply() {
+      const input = userInput.value.trim();
+      if (!input) return;
+      addMessage(input, "user");
+      userInput.value = "";
+      setTimeout(() => {
+        addMessage(getRandomWords(), "gusew");
+      }, 600);
+    }
+
+    sendBtn.addEventListener("click", reply);
+    userInput.addEventListener("keydown", e => {
+      if (e.key === "Enter") reply();
+    });
   </script>
 </body>
 </html>
