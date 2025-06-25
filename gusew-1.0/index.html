@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NIKITATIUTIUNNYK.FUN - GUSEW-1.0</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #444;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ccff;
+    }
+    main {
+      flex: 1;
+      padding: 40px 30px;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+      border-radius: 6px;
+      border: none;
+    }
+    input {
+      width: 300px;
+    }
+    button {
+      background-color: #007acc;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #005f99;
+    }
+    #response {
+      margin-top: 20px;
+      color: #00ffcc;
+      min-height: 40px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">NIKITATIUTIUNNYK.FUN</div>
+    <nav>
+      <a href="/">STRONA GŁÓWNA</a>
+      <a href="/gusew-1.0">GUSEW-1.0</a>
+      <a href="/kontakt">KONTAKT</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Żartobliwy AI Chatbot</h2>
+    <input type="text" id="userInput" placeholder="Napisz coś..." />
+    <button onclick="reply()">Wyślij</button>
+    <div id="response"></div>
+  </main>
+
+  <script>
+    const words = [
+      "Nikita", "хорошо", "chreboścz", "krae??", "!", "?",
+      "si©ciĄ", "Nubia", "Cochuje", "morze", "Powszy", "dżemcie",
+      "??????????", "тра", "Todomieść", "Ania", "ерво", "gwiazda",
+      "муш", "riało", "O ", "T x ((", ":" "kraę?",
+      "Polskie", "Żydci", "Józwiego", "Gerwazy", "jążeci?", "О х я с у т р бил",
+      "Niedczym", "powem", "..", ".", "w", "łĄk",
+      "na", "ăT", "Czączem", "!! !", "Krezna", "Kremlin",
+      "sŋąwwamµ", "Soplica", "Polię", "czĄ!  ?", "Gre,,,", "Gusew"
+    ];
+
+    function getRandomWords() {
+      const min = 3;
+      const max = 9;
+      const n = Math.floor(Math.random() * (max - min + 1)) + min;
+      let result = [];
+      for(let i = 0; i < n; i++) {
+        const word = words[Math.floor(Math.random() * words.length)];
+        result.push(word);
+      }
+      return result.join(" ");
+    }
+
+    function reply() {
+      const input = document.getElementById("userInput").value.trim();
+      if (!input) {
+        document.getElementById("response").textContent = "Napisz coś, proszę!";
+        return;
+      }
+      const response = getRandomWords();
+      document.getElementById("response").textContent = response;
+      document.getElementById("userInput").value = "";
+    }
+  </script>
+</body>
+</html>
