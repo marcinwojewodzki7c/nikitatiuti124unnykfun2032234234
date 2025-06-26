@@ -1,1 +1,160 @@
-<h1>test</h1>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sklep – Nikitatiutiunnyk.fun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #444;
+      background: black;
+    }
+
+    .logo a {
+      font-weight: 700;
+      font-size: 24px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ccff;
+    }
+
+    .btn-sans {
+      padding: 6px 14px;
+      border-radius: 12px;
+      background: #00ccff;
+      color: black !important;
+      font-weight: 700;
+    }
+
+    .btn-sans:hover {
+      background: #0099cc;
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: #00ccff;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .product {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 15px #00ccff33;
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
+    }
+
+    .product a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .product h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"><a href="/">NIKITATIUTIUNNYK.FUN</a></div>
+    <nav>
+      <a href="/gusew-1.0">GUSEW-1.0</a>
+      <a href="/gusewai">GUSEW AI</a>
+      <a href="/kontakt">KONTAKT</a>
+      <a href="/sans" class="btn-sans">SANS</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <h1>Sklep nikitatiutiunnyk.fun</h1>
+    <div class="products">
+
+      <div class="product">
+        <a href="/sklep/zloty-kriks">
+          <img src="img/kriks.jpg" alt="Złoty Kriks" />
+          <h2>Złoty Kriks</h2>
+        </a>
+        <div class="price">19,47 zł</div>
+      </div>
+
+      <div class="product">
+        <a href="/sklep/sekretna-kola">
+          <img src="img/kola.jpg" alt="Sekretna Kola" />
+          <h2>Sekretna Kola</h2>
+        </a>
+        <div class="price">19,97 zł</div>
+      </div>
+
+      <div class="product">
+        <a href="/sklep/galy-paly">
+          <img src="img/galy.jpg" alt="Gały Pały i Maga Denisa Zasadzki" />
+          <h2>Gały Pały i Maga Denisa Zasadzki</h2>
+        </a>
+        <div class="price">999,99 zł</div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
