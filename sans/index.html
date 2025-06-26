@@ -1,18 +1,76 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="pl">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>* Sans</title>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0; background: black; color: white; font-family: 'Noto Sans', sans-serif;
+      display: flex; flex-direction: column; min-height: 100vh;
+    }
+    main {
+      flex: 1; display: flex; justify-content: center; align-items: center;
+      padding: 40px 20px;
+    }
+    img {
+      cursor: pointer;
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #00ccff;
+      transition: transform 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-
 <body>
-   <audio controls autoplay>
-   <source src="a_Mihal.mp3" type="audio/mp3">
-Nikita 2
-  </audio>
-  
-  <img src="a_sans.png" alt="sans">
-  <! -- Za mną jest gość na niego mówią nikita
-  Ma w nosie świat, ma w nosie cały syf
-  wszystko zmienia w pałki, żadne to nie byle co
-  a na lekcji w klasie gra tylko w Brawl Stars-->
+  <!-- HEADER -->
+  <header>
+    <div class="logo"><a href="/" style="color: inherit; text-decoration: none;">NIKITATIUTIUNNYK.FUN</a></div>
+    <nav>
+      <a href="/sklep">MERCH </a>
+      <a href="/gusewai">GUSEW AI</a>
+      <a href="/kontakt">KONTAKT</a>
+      <a href="/sans" class="btn-sans">SANS</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <img src="a_sans.png" alt="Sans Undertale" onclick="window.location.href='/sans-granie'" />
+  </main>
+
+  <!-- HEADER STYLE -->
+  <style>
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 30px; border-bottom: 1px solid #444;
+      font-family: 'Noto Sans', sans-serif; font-weight: 700; background: black; color: white;
+    }
+    .logo a {
+      font-weight: 700; font-size: 24px;
+    }
+    nav a {
+      color: white; text-decoration: none; margin-left: 25px; font-weight: 700; font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ccff;
+    }
+    .btn-sans {
+      padding: 6px 14px;
+      border-radius: 12px;
+      background: #00ccff;
+      color: black !important;
+      font-weight: 700;
+    }
+    .btn-sans:hover {
+      background: #0099cc;
+    }
+  </style>
 </body>
+</html>
+
