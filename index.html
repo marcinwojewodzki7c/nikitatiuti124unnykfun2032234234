@@ -1,114 +1,103 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gusew++ 1.0.1 - Nikitatiutiunnyk.fun</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NIKITATIUTIUNNYK.FUN - Strona główna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0; background: black; color: white; font-family: 'Noto Sans', sans-serif; display: flex; flex-direction: column; min-height: 100vh;
+    }
+    header {
+      display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; border-bottom: 1px solid #444; flex-shrink: 0;
+    }
+    header .logo {
+      font-weight: 700; font-size: 24px;
+    }
+    nav a {
+      color: white; text-decoration: none; margin-left: 25px; font-weight: 700; font-size: 16px; transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ccff;
+    }
+    main {
+      flex: 1; display: flex; justify-content: center; align-items: center; padding: 40px 20px;
+    }
+    img {
+      max-width: 90vw; max-height: 80vh; border-radius: 12px; box-shadow: 0 0 15px rgba(0,255,255,0.4);
+    }
+  </style>
+</head>
+
 <style>
-  body {
-    margin: 0;
-    background: black;
-    color: white;
-    font-family: 'Noto Sans', sans-serif;
-  }
-
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    border-bottom: 1px solid #444;
-    background: black;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 30px; border-bottom: 1px solid #444;
+    font-family: 'Noto Sans', sans-serif; font-weight: 700; background: black; color: white;
   }
-
   .logo a {
-    font-weight: 700;
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
+    font-weight: 700; font-size: 24px;
   }
-
   nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 700;
-    font-size: 16px;
+    color: white; text-decoration: none; margin-left: 25px; font-weight: 700; font-size: 16px;
     transition: color 0.3s;
   }
-
   nav a:hover {
     color: #00ccff;
   }
-
   .btn-sans {
     padding: 6px 14px;
     border-radius: 12px;
     background: #00ccff;
     color: black !important;
     font-weight: 700;
-    text-decoration: none;
   }
-
   .btn-sans:hover {
     background: #0099cc;
   }
-
-  main {
-    padding: 40px 20px;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    margin-bottom: 40px;
-    font-size: 32px;
-    color: #00ccff;
-  }
-
-  .info-box {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 16px;
-    padding: 30px 25px;
-    box-shadow: 0 0 15px #00ccff33;
-    margin-bottom: 40px;
-    text-align: left;
-  }
-
-  .info-box p {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-
-  pre {
-    background: #222;
-    border-radius: 12px;
-    padding: 20px;
-    font-size: 16px;
-    color: #ffcc00;
-    overflow-x: auto;
-    margin-top: 20px;
-  }
 </style>
-</head>
+
 <body>
 <header>
-  <div class="logo"><a href="/GusewPlusPlus/index.html">Gusew++</a></div>
+  <div class="logo"><a href="/" style="color: inherit; text-decoration: none;">NIKITATIUTIUNNYK.FUN</a></div>
   <nav>
-    <a href="/GusewPlusPlus/Dokumentacja">Dokumentacja</a>
-    <a href="/GusewPlusPlus/Pobierz" class="btn-sans">Pobierz Gusew++</a>
+    <a href="/gusewai">GUSEW AI</a>
+    <a href="/kontakt">KONTAKT</a>
+    <a href="/sklep">SKLEP</a>
+    <a href="/sans" class="btn-sans">SANS</a>
+    
   </nav>
 </header>
 <main>
-  <h1>Gusew++ 1.0.1</h1>
-  
-  <div class="info-box">
-    <p><strong>Gusew++</strong> to innowacyjny język programowania z zaawansowanymi funkcjami, stworzony przez Chujniownię.</p>
-    <p>Wersja 1.0.1 oferuje łatwą instalację i potężne możliwości w prostym składniku.</p>
+  <img src="haraszo158.jpg" alt="Haraszo" />
+  <div style="
+    margin-top: 30px;
+    background: #111;
+    border: 1px solid #00ccff;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 400px;
+    color: white;
+    font-weight: 700;
+    font-family: 'Noto Sans', sans-serif;
+    box-shadow: 0 0 10px #00ccff88;
+  ">
+    Wydano język programowania <strong>Gusew++ 1.0.1</strong> przez Chujniownię.<br />
+    <a href="/GusewPlusPlus" style="
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: #00ccff;
+      color: black;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s;
+    " onmouseover="this.style.background='#0099cc'" onmouseout="this.style.background='#00ccff'">
+      Zobacz Gusew++
+    </a>
   </div>
-  
 </main>
 </body>
 </html>
