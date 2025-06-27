@@ -3,129 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gusew++ 1.0.1 - nikitatiutiunnyk.fun</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+  <title>NIKITATIUTIUNNYK.FUN - Gusew++ 1.0.1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
-      background-color: #000;
-      color: white;
-      font-family: 'Noto Sans', sans-serif;
-      line-height: 1.6;
+      margin: 0; background: black; color: white; font-family: 'Noto Sans', sans-serif; display: flex; flex-direction: column; min-height: 100vh;
     }
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 24px;
-      background-color: #111;
-      box-shadow: 0 2px 8px rgba(255, 204, 0, 0.5);
+      display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; border-bottom: 1px solid #444; flex-shrink: 0;
     }
     header .logo {
-      font-weight: bold;
-      font-size: 20px;
-      cursor: pointer;
-      color: white;
-      text-decoration: none;
-      font-family: 'Noto Sans', sans-serif;
+      font-weight: 700; font-size: 24px;
     }
-    header nav button {
-      background: none;
-      border: none;
-      color: white;
-      font-family: 'Noto Sans', sans-serif;
-      font-weight: 600;
-      cursor: pointer;
-      margin-left: 18px;
-      font-size: 16px;
-      padding: 6px 12px;
-      border-radius: 12px;
-      transition: background-color 0.3s ease;
+    nav a {
+      color: white; text-decoration: none; margin-left: 25px; font-weight: 700; font-size: 16px; transition: color 0.3s;
     }
-    header nav button:hover {
-      background-color: #ffcc00;
-      color: black;
+    nav a:hover {
+      color: #00ccff;
     }
     main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px 60px 20px;
+      flex: 1; padding: 40px 20px; max-width: 900px; margin: 0 auto;
     }
     h1 {
-      text-align: center;
+      color: #00ccff; font-weight: 700; font-size: 32px; margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #00ccff;
+      color: black;
       font-weight: 700;
-      margin-bottom: 10px;
-      font-size: 2.8rem;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-right: 20px;
+      transition: background 0.3s;
     }
-    .subtitle {
-      text-align: center;
-      font-style: italic;
-      color: #ccc;
-      margin-bottom: 40px;
-      font-size: 1.1rem;
-    }
-    section {
-      background-color: #222;
-      border-radius: 15px;
-      padding: 25px 30px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
-    }
-    section h2 {
-      margin-top: 0;
-      font-size: 1.8rem;
-      border-bottom: 2px solid #ffcc00;
-      padding-bottom: 8px;
-      margin-bottom: 20px;
+    .btn:hover {
+      background: #0099cc;
     }
     pre {
-      background-color: #111;
-      border-radius: 10px;
-      padding: 15px 20px;
+      background: #111;
+      border: 1px solid #00ccff;
+      border-radius: 12px;
+      padding: 20px;
       overflow-x: auto;
+      box-shadow: 0 0 10px #00ccff88;
+      font-size: 16px;
+      line-height: 1.4;
+      margin-top: 20px;
       font-family: 'Courier New', Courier, monospace;
-      font-size: 0.9rem;
-      line-height: 1.3;
-      color: #ffd633;
-      margin-top: 10px;
       white-space: pre-wrap;
-      word-break: break-word;
+      word-wrap: break-word;
+      color: #00ccff;
+    }
+    section {
+      margin-top: 30px;
+      font-weight: 700;
+      line-height: 1.5;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <a href="/" class="logo">NIKITATIUTIUNNYK.FUN</a>
-    <nav>
-      <button onclick="location.href='/GusewPlusPlus'">Dokumentacja</button>
-      <button onclick="location.href='/GusewPlusPlus/Pobierz'">Pobierz Gusew++</button>
-    </nav>
-  </header>
+<header>
+  <div class="logo"><a href="/" style="color: inherit; text-decoration: none;">NIKITATIUTIUNNYK.FUN</a></div>
+  <nav>
+    <a href="/gusewai">GUSEW AI</a>
+    <a href="/kontakt">KONTAKT</a>
+    <a href="/sklep">SKLEP</a>
+    <a href="/sans" class="btn-sans">SANS</a>
+  </nav>
+</header>
 
-  <main>
-    <h1>Gusew++ 1.0.1</h1>
-    <p class="subtitle">Innowacyjny język programowania stworzony przez Chujniownię</p>
+<main>
+  <h1>Gusew++ 1.0.1</h1>
+  
+  <nav style="margin-bottom: 30px;">
+    <a href="/GusewPlusPlus/dokumentacja" class="btn">Dokumentacja</a>
+    <a href="/GusewPlusPlus/pobierz" class="btn">Pobierz Gusew++</a>
+  </nav>
 
-    <section>
-      <h2>Opis języka</h2>
-      <p>
-        Gusew++ to nowoczesny i innowacyjny język programowania z zaawansowanymi funkcjami, który powstał z myślą o łatwej i dynamicznej komunikacji. 
-        Bazuje na prostocie składni i integruje funkcje AI, które umożliwiają tworzenie inteligentnych skryptów w szybki i wygodny sposób.
-      </p>
-      <p>
-        Język został opracowany i rozwijany przez firmę <strong>Chujniownia</strong>, zapewniając stabilność i ciągły rozwój narzędzi.
-      </p>
-    </section>
+  <section>
+    <p><strong>Gusew++</strong> to innowacyjny język programowania z zaawansowanymi funkcjami stworzony przez Chujniownię.</p>
+    <p>Poniżej znajdziesz instrukcję instalacji i przykład użycia.</p>
+  </section>
 
-    <section>
-      <h2>Przykład kodu</h2>
-      <pre>
+  <section>
+    <h2>Manualna instalacja</h2>
+    <p><strong>Krok 1:</strong> Pobierz interpreter:</p>
+    <pre>
+mkdir -p ~/gusewpp
+curl -fsSL -o ~/gusewpp/gusew https://raw.githubusercontent.com/marcinwojewodzki7c/nikitatiuti124unnykfun2032234234/main/GusewPlusPlus/Interpreter.py
+chmod +x ~/gusewpp/gusew
+    </pre>
+    <p><strong>Krok 2:</strong> Dodaj interpreter do ścieżki PATH:</p>
+    <pre>
+echo 'export PATH="$HOME/gusewpp:$PATH"' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+    </pre>
+    <p>(lub edytuj ~/.zshrc, jeśli używasz zsh)</p>
+    <p><strong>Krok 3:</strong> Uruchom interpreter przykładowym poleceniem:</p>
+    <pre>
+gusew -krix example.gusew
+    </pre>
+  </section>
+
+  <section>
+    <h2>Przykładowy plik <code>example.gusew</code></h2>
+    <pre>
 a_var [imię] -&gt; [Anonim]
 ask [imię]
 say [imię]
-      </pre>
-      <p>Prosty skrypt, który przypisuje zmienną, pyta użytkownika i odpowiada.</p>
-    </section>
-  </main>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Automatyczna instalacja przez skrypt</h2>
+    <p>Pobierz i uruchom skrypt instalacyjny, który zrobi wszystko za Ciebie:</p>
+    <p><a href="/GusewPlusPlus/gusew-1.0-installer.sh" download style="color:#00ccff; font-weight:700; text-decoration:none;">Pobierz install_gusewpp.sh</a></p>
+    <pre>
+chmod +x install_gusewpp.sh
+./install_gusewpp.sh
+source ~/.bashrc  # lub ~/.zshrc
+    </pre>
+  </section>
+
+  <section>
+    <p>Po instalacji możesz uruchamiać Gusew++ z konsoli:</p>
+    <pre>gusew -krix example.gusew</pre>
+  </section>
+
+</main>
+
 </body>
 </html>
