@@ -61,6 +61,29 @@
       font-weight: 700;
       line-height: 1.5;
     }
+    .install-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .install-box {
+      flex: 1 1 350px;
+      background: #111;
+      border: 1px solid #00ccff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px #00ccff88;
+    }
+    .install-box h2 {
+      margin-top: 0;
+      color: #00ccff;
+    }
+    @media (max-width: 720px) {
+      .install-container {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
@@ -88,25 +111,40 @@
     <p>Poniżej znajdziesz instrukcję instalacji i przykład użycia.</p>
   </section>
 
-  <section>
-    <h2>Manualna instalacja</h2>
-    <p><strong>Krok 1:</strong> Pobierz interpreter:</p>
-    <pre>
+  <div class="install-container">
+    <div class="install-box">
+      <h2>Automatyczna instalacja przez skrypt</h2>
+      <p>Pobierz i uruchom skrypt instalacyjny, który zrobi wszystko za Ciebie:</p>
+      <p><a href="/GusewPlusPlus/gusew-1.0-installer.sh" download style="color:#00ccff; font-weight:700; text-decoration:none;">Pobierz install_gusewpp.sh</a></p>
+      <pre>
+chmod +x install_gusewpp.sh
+./install_gusewpp.sh
+source ~/.bashrc  # lub ~/.zshrc
+      </pre>
+      <p>Po instalacji możesz uruchamiać Gusew++ z konsoli:</p>
+      <pre>gusew -krix example.gusew</pre>
+    </div>
+
+    <div class="install-box">
+      <h2>Manualna instalacja</h2>
+      <p><strong>Krok 1:</strong> Pobierz interpreter:</p>
+      <pre>
 mkdir -p ~/gusewpp
 curl -fsSL -o ~/gusewpp/gusew https://raw.githubusercontent.com/marcinwojewodzki7c/nikitatiuti124unnykfun2032234234/main/GusewPlusPlus/Interpreter.py
 chmod +x ~/gusewpp/gusew
-    </pre>
-    <p><strong>Krok 2:</strong> Dodaj interpreter do ścieżki PATH:</p>
-    <pre>
+      </pre>
+      <p><strong>Krok 2:</strong> Dodaj interpreter do ścieżki PATH:</p>
+      <pre>
 echo 'export PATH="$HOME/gusewpp:$PATH"' &gt;&gt; ~/.bashrc
 source ~/.bashrc
-    </pre>
-    <p>(lub edytuj ~/.zshrc, jeśli używasz zsh)</p>
-    <p><strong>Krok 3:</strong> Uruchom interpreter przykładowym poleceniem:</p>
-    <pre>
+      </pre>
+      <p>(lub edytuj ~/.zshrc, jeśli używasz zsh)</p>
+      <p><strong>Krok 3:</strong> Uruchom interpreter przykładowym poleceniem:</p>
+      <pre>
 gusew -krix example.gusew
-    </pre>
-  </section>
+      </pre>
+    </div>
+  </div>
 
   <section>
     <h2>Przykładowy plik <code>example.gusew</code></h2>
@@ -115,22 +153,6 @@ a_var [imię] -&gt; [Anonim]
 ask [imię]
 say [imię]
     </pre>
-  </section>
-
-  <section>
-    <h2>Automatyczna instalacja przez skrypt</h2>
-    <p>Pobierz i uruchom skrypt instalacyjny, który zrobi wszystko za Ciebie:</p>
-    <p><a href="/GusewPlusPlus/gusew-1.0-installer.sh" download style="color:#00ccff; font-weight:700; text-decoration:none;">Pobierz install_gusewpp.sh</a></p>
-    <pre>
-chmod +x install_gusewpp.sh
-./install_gusewpp.sh
-source ~/.bashrc  # lub ~/.zshrc
-    </pre>
-  </section>
-
-  <section>
-    <p>Po instalacji możesz uruchamiać Gusew++ z konsoli:</p>
-    <pre>gusew -krix example.gusew</pre>
   </section>
 
 </main>
