@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Sekretna Kola – Sklep</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: black;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo a {
+      font-weight: bold;
+      font-size: 24px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 700;
+    }
+
+    .btn-sans {
+      background: #00ccff;
+      color: black;
+      padding: 6px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .product-image {
+      flex: 1 1 300px;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #444;
+    }
+
+    .product-info {
+      flex: 1 1 300px;
+    }
+
+    .product-info h1 {
+      font-size: 32px;
+      color: #ffcc00;
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 24px;
+      color: #ffcc00;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .delivery {
+      font-size: 16px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="/">NIKITATIUTIUNNYK.FUN</a></div>
+  <nav>
+    <a href="/sklep">MERCH</a>
+    <a href="/Gusew-AI">GUSEW-AI</a>
+    <a href="/kontakt">KONTAKT</a>
+    <a href="/sans" class="btn-sans">SANS</a>
+  </nav>
+</header>
+
+<main>
+  <div class="product-container">
+    <div class="product-image">
+      <img src="../img/kola1.jpg" alt="Sekretna Kola">
+    </div>
+    <div class="product-info">
+      <h1>Sekretna Kola</h1>
+      <div class="price">19,97 zł</div>
+      <div class="delivery">+ 4,70 zł dostawa</div>
+      <div class="description">
+        Sekretna Kola to nie jest zwykły napój. Opracowana przez firmę Chujniownia w 1947 roku, zawiera unikalną formułę dającą <strong>masywną moc i siłę</strong>. Idealna do wypicia przed ważnym wyzwaniem życiowym lub walką na pięści. 
+*(może podwyższyć estrogen o ponad 400%.)
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
