@@ -1,0 +1,8 @@
+a_var [imię] -> [---]
+l_var [wiek] -> [0]
+
+ask [imię]
+say [imię]
+
+ask [wiek]
+say [wiek]
