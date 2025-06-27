@@ -5,82 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>nikitatiutiunnyk.fun - Strona Główna</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      background-color: #000;
-      color: white;
-      font-family: 'Noto Sans', sans-serif;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 24px;
-      background-color: #111;
-      box-shadow: 0 2px 8px rgba(255, 204, 0, 0.5);
-    }
-    header .logo {
-      font-weight: bold;
-      font-size: 20px;
-      cursor: pointer;
-      color: white;
-      text-decoration: none;
-      font-family: 'Noto Sans', sans-serif;
-    }
-    header nav button {
-      background: none;
-      border: none;
-      color: white;
-      font-family: 'Noto Sans', sans-serif;
-      font-weight: 600;
-      cursor: pointer;
-      margin-left: 18px;
-      font-size: 16px;
-      padding: 6px 12px;
-      border-radius: 12px;
-      transition: background-color 0.3s ease;
-    }
-    header nav button:hover {
-      background-color: #ffcc00;
-      color: black;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      font-family: 'Noto Sans', sans-serif;
-    }
-    .gusewpp-box {
-      background-color: #222;
-      border-radius: 20px;
-      padding: 20px 30px;
-      color: white;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
-      max-width: 600px;
-      margin: 0 auto 40px auto;
-    }
-    .gusewpp-box p {
-      font-size: 18px;
-      margin: 0 0 15px 0;
-    }
-    .gusewpp-box a {
-      display: inline-block;
-      background: #ffcc00;
-      color: black;
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 18px;
-      box-shadow: 0 2px 8px rgba(255, 204, 0, 0.7);
-      transition: background-color 0.3s ease;
-    }
-    .gusewpp-box a:hover {
-      background-color: #ddb300;
-    }
-  </style>
+ <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+  body {
+    background-color: black;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0; padding: 0;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    padding: 15px 30px;
+  }
+  header h1 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: default;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+  }
+  .info-box {
+    background: #222;
+    border-radius: 15px;
+    padding: 20px 30px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 0 10px #333;
+  }
+  .btn {
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+  }
+  .btn:hover {
+    background: #555;
+  }
+</style>
 </head>
 <body>
   <header>
