@@ -70,6 +70,8 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      max-width: 1280px;
+      margin: 0 auto;
     }
 
     .product {
@@ -77,9 +79,10 @@
       border: 1px solid #333;
       border-radius: 16px;
       padding: 20px;
-      width: 300px;
+      width: 22%; /* około 4 w rzędzie z gap */
       box-shadow: 0 0 15px #00ccff33;
       transition: transform 0.2s;
+      box-sizing: border-box;
     }
 
     .product:hover {
@@ -109,6 +112,19 @@
       font-weight: bold;
       color: #ffcc00;
     }
+
+    /* Sekcja antyków - nowy rząd */
+    .products.antyki {
+      margin-top: 60px;
+      justify-content: center;
+    }
+
+    .product.antyk {
+      width: 300px; /* stała szerokość dla antyku */
+      background: #330000;
+      border-color: #660000;
+      box-shadow: 0 0 20px #ff3300aa;
+    }
   </style>
 </head>
 <body>
@@ -127,8 +143,9 @@
   <!-- Main -->
   <main>
     <h1>Sklep nikitatiutiunnyk.fun</h1>
-    <div class="products">
 
+    <!-- Produkty główne -->
+    <div class="products">
       <div class="product">
         <a href="/sklep/Zloty-Kriks">
           <img src="img/kriks1.jpg" alt="Złoty Kriks" />
@@ -147,13 +164,34 @@
 
       <div class="product">
         <a href="/sklep/Zycie-Ukrainca-Plyta">
-          <img src="img/plyta.jpg" alt="Życie Ukrainca - Gała Pała i Mag Denis Zasadzka" />
+          <img src="img/plyta.png" alt="Życie Ukrainca - Gała Pała i Denis Zasadzka" />
           <h2>Zycie Ukrainca - Gała Pała i Denis Zasadzka</h2>
         </a>
         <div class="price">999,99 zł</div>
       </div>
 
+      <!-- Nowy produkt: Film Pan z Fontanny -->
+      <div class="product">
+        <a href="/sklep/Pan-z-Fontanny-2025">
+          <img src="img/pan_z_fontanny.jpg" alt="Film Pan z Fontanny (2025)" />
+          <h2>Film Pan z Fontanny (2025)</h2>
+        </a>
+        <div class="price">49,99 zł</div>
+      </div>
     </div>
+
+    <!-- Produkty antyczne -->
+    <h2 style="margin-top: 60px; color: #ff3300;">Przeklęte Produkty</h2>
+    <div class="products antyki">
+      <div class="product antyk">
+        <a href="/sklep/Kutasiarka-1">
+          <img src="img/kutasiarka1.png" alt="Kutasiarka 1" />
+          <h2>Kutasiarka 1 (2 generacji)</h2>
+        </a>
+        <div class="price">0 zł (+klątwa)</div>
+      </div>
+    </div>
+
   </main>
 
 </body>
