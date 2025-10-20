@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Nikita Tiutiunnyk Clicker</title>
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; background: #f0f0f0; }
+  #nikita { cursor: pointer; width: 300px; height: 300px; }
+  button { margin: 5px; padding: 5px 10px; }
+  #shop, #debug { display: none; background: #fff; border: 1px solid #aaa; padding: 10px; margin: 10px auto; width: 300px; text-align:left; }
+  h3 { margin-top: 5px; margin-bottom:5px; }
+</style>
+</head>
+<body>
+
+<h1>Nikita Tiutiunnyk Clicker</h1>
+<div id="stats">
+  <p id="hryvnia">Hrywien: 0</p>
+  <p id="klasa">Klasa: Novic Nikita</p>
+  <p id="booster">Boostery: x1</p>
+</div>
+<img id="nikita" src="nikita1.png" alt="Nikita">
+
+<div>
+  <button onclick="toggleShop()">Otwórz sklep</button>
+  <button onclick="toggleDebug()">Debug Menu</button>
+</div>
+
+<div id="shop">
+  <h3>Sklep Boostery</h3>
+  <div id="boosters"></div>
+  <h3>Ulepszenia Nikity</h3>
+  <div id="upgrades"></div>
+  <button onclick="toggleShop()">Zamknij sklep</button>
+</div>
+
+<div id="debug">
+  <h3>Debug Menu</h3>
+  <label>Poziom Nikity (1-4):</label><br>
+  <input type="number" id="debugLevel" value="1" min="1" max="4"><br>
+  <label>Mnożnik:</label><br>
+  <input type="number" id="debugMultiplier" step="0.1" value="1"><br>
+  <label>Hrywien:</label><br>
+  <input type="number" id="debugHryvnia" value="0"><br>
+  <button onclick="applyDebug()">Zastosuj</button>
+  <button onclick="toggleDebug()">Zamknij</button>
+</div>
+
+<script>
+let clicks = 0;
+let hryvnia = 0;
+let multiplier = 1;
+let nikitaLevel = 1;
+let boosterTimers = [];
+
+const nikitaLevels = [
+  {level:1, cost:0, multiplier:1.0, img:"nikita1.png"},
+  {level:2, cost:10000, multiplier:1.2, img:"nikita2.png"},
+  {level:3, cost:20000, multiplier:1.0, img:"nikita3.png"},
+  {level:4, cost:40000, multiplier:1.0, img:"nikita4.png"}
+];
+
+const boosters = [
+  {name:"x2", cost:5000, multiplier:1, duration:600},
+  {name:"x3", cost:15000, multiplier:2, duration:600},
+  {name:"x4", cost:30000, multiplier:3, duration:600}
+];
+
+const classes = [
+  {min:4000000, name:"Kutasiarz klasy I"},
+  {min:2000000, name:"Kutasiarz klasy II"},
+  {min:500000, name:"Kutasiarz klasy III"},
+  {min:0, name:"Zwykły Nikita"}
+];
+
+function hryvniaText(amount) {
+    amount = Math.floor(amount);
+    if (amount % 10 === 1 && amount % 100 !== 11) return amount + " hrywna";
+    if (amount % 10 >= 2 && amount % 10 <=4 && !(amount %100 >=12 && amount%100<=14)) return amount + " hrywien";
+    return amount + " hrywien";
+}
+
+function getClass(clicks) {
+    for (let cls of classes) {
+        if (clicks >= cls.min) return cls.name;
+    }
+}
+
+function updateUI() {
+    document.getElementById("hryvnia").textContent = "Hrywien: " + hryvniaText(hryvnia);
+    document.getElementById("klasa").textContent = "Klasa: " + getClass(clicks);
+    document.getElementById("booster").textContent = "Boostery: x" + multiplier.toFixed(1);
+    document.getElementById("nikita").src = nikitaLevels[nikitaLevel-1].img;
+}
+
+// --- Kliknięcie ---
+document.getElementById("nikita").addEventListener("click", ()=>{
+    clicks++;
+    hryvnia += multiplier;
+    updateUI();
+});
+
+// --- Shop ---
+function toggleShop() {
+    const shop = document.getElementById("shop");
+    shop.style.display = (shop.style.display === "none") ? "block" : "none";
+}
+
+// Generuj przyciski boosterów
+function renderBoosters() {
+    const container = document.getElementById("boosters");
+    container.innerHTML = "";
+    boosters.forEach(b=>{
+        const btn = document.createElement("button");
+        btn.textContent = `${b.name} na 10 minut (${b.cost} hrywien)`;
+        btn.onclick = ()=>buyBooster(b);
+        container.appendChild(btn);
+        container.appendChild(document.createElement("br"));
+    });
+}
+
+// Kup booster
+function buyBooster(b) {
+    if (hryvnia >= b.cost) {
+        hryvnia -= b.cost;
+        multiplier += b.multiplier;
+        updateUI();
+        let end = Date.now() + b.duration*1000;
+        boosterTimers.push({inc:b.multiplier, end});
+        setTimeout(()=>{
+            multiplier -= b.multiplier;
+            updateUI();
+        }, b.duration*1000);
+    } else alert("Nie masz wystarczająco hrywien!");
+}
+
+// Generuj przyciski ulepszeń Nikity
+function renderUpgrades() {
+    const container = document.getElementById("upgrades");
+    container.innerHTML = "";
+    nikitaLevels.forEach(l=>{
+        if (l.level > nikitaLevel) {
+            const btn = document.createElement("button");
+            btn.textContent = `Ulepsz do poziomu ${l.level} (${l.cost} hrywien)`;
+            btn.onclick = ()=>upgradeNikita(l);
+            container.appendChild(btn);
+            container.appendChild(document.createElement("br"));
+        }
+    });
+}
+
+function upgradeNikita(l) {
+    if (hryvnia >= l.cost) {
+        hryvnia -= l.cost;
+        nikitaLevel = l.level;
+        if (nikitaLevel===2) multiplier *= 1.2;
+        updateUI();
+        renderUpgrades();
+    } else alert("Nie masz wystarczająco hrywien!");
+}
+
+// --- Debug ---
+function toggleDebug() {
+    const debug = document.getElementById("debug");
+    debug.style.display = (debug.style.display==="none")?"block":"none";
+}
+
+function applyDebug() {
+    let lvl = parseInt(document.getElementById("debugLevel").value);
+    if (lvl>=1 && lvl<=4) nikitaLevel = lvl;
+    multiplier = parseFloat(document.getElementById("debugMultiplier").value);
+    hryvnia = parseFloat(document.getElementById("debugHryvnia").value);
+    updateUI();
+    renderUpgrades();
+}
+
+// --- Keyboard debug ---
+document.addEventListener("keydown", (e)=>{
+    if (e.key.toLowerCase()==="p") toggleDebug();
+});
+
+// --- Init ---
+updateUI();
+renderBoosters();
+renderUpgrades();
+</script>
+
+</body>
+</html>
