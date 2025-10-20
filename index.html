@@ -40,37 +40,47 @@
     img {
       max-width: 90vw; max-height: 80vh; border-radius: 12px; box-shadow: 0 0 15px rgba(0,255,255,0.4);
     }
+
+    /* --- Reklama --- */
+    .ad-banner {
+      background: #001f26;
+      border: 2px solid #00ccff;
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,255,255,0.3);
+      animation: glow 2s ease-in-out infinite alternate;
+      margin-top: 50px;
+    }
+    .ad-banner h2 {
+      color: #00ccff;
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
+    .ad-banner p {
+      color: #ddd;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    .ad-banner a {
+      display: inline-block;
+      background: #00ccff;
+      color: black;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      transition: background 0.3s;
+    }
+    .ad-banner a:hover {
+      background: #0099cc;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px rgba(0,255,255,0.3); }
+      to { box-shadow: 0 0 25px rgba(0,255,255,0.6); }
+    }
   </style>
 </head>
-
-
-<style>
-  header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 30px; border-bottom: 1px solid #444;
-    font-family: 'Noto Sans', sans-serif; font-weight: 700; background: black; color: white;
-  }
-  .logo a {
-    font-weight: 700; font-size: 24px;
-  }
-  nav a {
-    color: white; text-decoration: none; margin-left: 25px; font-weight: 700; font-size: 16px;
-    transition: color 0.3s;
-  }
-  nav a:hover {
-    color: #00ccff;
-  }
-  .btn-sans {
-    padding: 6px 14px;
-    border-radius: 12px;
-    background: #00ccff;
-    color: black !important;
-    font-weight: 700;
-  }
-  .btn-sans:hover {
-    background: #0099cc;
-  }
-</style>
 
 <body>
 <header>
@@ -80,9 +90,9 @@
     <a href="/kontakt">KONTAKT</a>
     <a href="/sklep">SKLEP</a>
     <a href="/sans" class="btn-sans">SANS</a>
-    
   </nav>
 </header>
+
 <main>
   <div style="max-width: 900px; line-height: 1.6;">
     <h1 style="font-size: 32px; color: #00ccff; margin-bottom: 20px;">Atikin Lubiechów</h1>
@@ -96,6 +106,14 @@
       <li><strong>Gusew AI</strong> – genialny chatbot AI stworzony przez Atikina, zaprojektowany do nauki, interakcji i eksperymentów w dziedzinie sztucznej inteligencji. Jego konstrukcja i sposób działania były uważane za wyjątkowo zaawansowane jak na czas powstania, a AI zyskało reputację jako jedno z najbardziej innowacyjnych dzieł Atikina.</li>
       <li><strong>Inne eksperymenty technologiczne</strong> – liczne prace Atikina obejmowały zaawansowaną inżynierię, programowanie oraz próby tworzenia systemów, które wykraczały poza tradycyjne zastosowania technologii.</li>
     </ul>
+
+    <!-- Reklama GalaPalaGames -->
+    <div class="ad-banner">
+      <h2>🎮 GalaPalaGames prezentuje:</h2>
+      <p><strong>Nikita Tiutiunnyk Clicker V1</strong> — oficjalna gra klikerska inspirowana legendarnym Tiutiunnykiem!  
+      Klikaj, ulepszaj, odkrywaj sekrety Gusewa i Chigorina!</p>
+      <a href="https://nikitatiutiunnyk.fun/GalaPalaGames/nikita-Tiutiunnyk-Clicker" target="_blank">Zagraj teraz</a>
+    </div>
 
   </div>
 </main>
