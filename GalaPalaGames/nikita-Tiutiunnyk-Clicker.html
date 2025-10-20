@@ -87,7 +87,7 @@ function getClass(clicks) {
 }
 
 function updateUI() {
-    document.getElementById("hryvnia").textContent = "Hrywien: " + hryvniaText(hryvnia);
+    document.getElementById("hryvnia").textContent = "Hrywny: " + hryvniaText(hryvnia);
     document.getElementById("klasa").textContent = "Klasa: " + getClass(clicks);
     document.getElementById("booster").textContent = "Boostery: x" + multiplier.toFixed(1);
     document.getElementById("nikita").src = nikitaLevels[nikitaLevel-1].img;
